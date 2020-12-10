@@ -2317,7 +2317,8 @@
             "detail": "",
             "documentation": "Computes texture coordinate for doing a screenspace-mapped texture sample. Input is clip space position.",
             "Synopsis": [
-                "float4 ComputeScreenPos (float4 clipPos)"
+                "float4 ComputeScreenPos (float4 clipPos)",
+                "float4 ComputeScreenPos(float4 positionCS)"
             ]
         },
         "ComputeGrabScreenPos": {
@@ -2338,7 +2339,9 @@
             "detail": "",
             "documentation": "Unpack normal from texture.",
             "Synopsis":[
-              "float3 UnpackNormal (tex2D t2d)"
+              "float3 UnpackNormal (tex2D t2d)",
+              "real3 UnpackNormal(real4 packedNormal)"
+              
             ]
         },
         "TRANSFORM_TEX" : {
@@ -2892,7 +2895,256 @@
             "Synopsis": [
                 "real SphericalDot(real cosTheta1, real phi1, real cosTheta2, real phi2)"
             ]
-        }
+        },
+
+
+        "GetFullScreenTriangleTexCoord": {
+            "detail":"",
+            "documentation": "Generates a triangle in homogeneous clip space, s.t.",
+            "Synopsis": [
+                "float2 GetFullScreenTriangleTexCoord(uint vertexID)",
+                "v0 = (-1, -1, 1), v1 = (3, -1, 1), v2 = (-1, 3, 1)."
+            ]
+        },
+        "GetFullScreenTriangleVertexPosition": {
+            "detail":"",
+            "documentation": "Generates a triangle in homogeneous clip space, s.t.",
+            "Synopsis": [
+                "float4 GetFullScreenTriangleVertexPosition(uint vertexID, float z = UNITY_NEAR_CLIP_VALUE)"
+            ]
+        },
+        "GetQuadTexCoord": {
+            "detail":"",
+            "documentation": "GetQuadTexCoord",
+            "Synopsis": [
+                "float2 GetQuadTexCoord(uint vertexID)"
+            ]
+        },
+        "GetQuadVertexPosition": {
+            "detail":"",
+            "documentation": "GetQuadVertexPosition",
+            "Synopsis": [
+                "float4 GetQuadVertexPosition(uint vertexID, float z = UNITY_NEAR_CLIP_VALUE)"
+            ]
+        },
+        "LODDitheringTransition": {
+            "detail":"",
+            "documentation": "This is what is provided by unity_LODFade",
+            "Synopsis": [
+                "void LODDitheringTransition(uint2 fadeMaskSeed, float ditherFactor)",
+                "LOD dithering transition helper",
+                "LOD0 must use this function with ditherFactor 1..0",
+                "LOD1 must use this function with ditherFactor -1..0"
+
+            ]
+        },
+        "GetStencilValue": {
+            "detail":"",
+            "documentation": "GetStencilValue",
+            "Synopsis": [
+                "uint GetStencilValue(uint2 stencilBufferVal)"
+            ]
+        },
+
+
+
+        "UnpackNormalScale": {
+            "detail":"",
+            "documentation": "UnpackNormalScale",
+            "Synopsis": [
+                "real3 UnpackNormalScale(real4 packedNormal, real bumpScale)"
+            ]
+        },
+
+        "PackFloatToR8G8": {
+            "detail":"",
+            "documentation": "Both the input and the output are in the [0, 1] range.",
+            "Synopsis": [
+                "real2 PackFloatToR8G8(real f)"
+            ]
+        },
+        "UnpackFloatFromR8G8": {
+            "detail":"",
+            "documentation": "Both the input and the output are in the [0, 1] range.",
+            "Synopsis": [
+                "real UnpackFloatFromR8G8(real2 f)"
+            ]
+        },
+        "PackFloat2To888": {
+            "detail":"",
+            "documentation": "Pack float2 (each of 12 bit) in 888",
+            "Synopsis": [
+                "float3 PackFloat2To888(float2 f)"
+            ]
+        },
+        "Unpack888ToFloat2": {
+            "detail":"",
+            "documentation": " Unpack 2 float of 12bit packed into a 888",
+            "Synopsis": [
+                "float2 Unpack888ToFloat2(float3 x)"
+            ]
+        },
+
+
+        "GetCameraPositionWS": {
+            "detail":"",
+            "documentation": "Get Camera PositionWS",
+            "Synopsis": [
+                "float3 GetCameraPositionWS()"
+            ]
+        },
+        "GetScaledScreenParams": {
+            "detail":"",
+            "documentation": "Get Scaled ScreenParams",
+            "Synopsis": [
+                "float4 GetScaledScreenParams()"
+            ]
+        },
+        "ComputeFogFactor": {
+            "detail":"",
+            "documentation": "ComputeFogFactor",
+            "Synopsis": [
+                "real ComputeFogFactor(float z)"
+            ]
+        },
+        "ComputeFogIntensity": {
+            "detail":"",
+            "documentation": "ComputeFogIntensity",
+            "Synopsis": [
+                "real ComputeFogIntensity(real fogFactor)"
+            ]
+        },
+        "MixFogColor": {
+            "detail":"",
+            "documentation": "MixFogColor",
+            "Synopsis": [
+                "half3 MixFogColor(real3 fragColor, real3 fogColor, real fogFactor)"
+            ]
+        },
+        "MixFog": {
+            "detail":"",
+            "documentation": "MixFog",
+            "Synopsis": [
+                "half3 MixFog(real3 fragColor, real fogFactor)"
+            ]
+        },
+
+
+
+        "SphericalToCartesian": {
+            "detail":"",
+            "documentation": "Transforms the unit vector from the spherical to the Cartesian (right-handed, Z up) coordinate.",
+            "Synopsis": [
+                "real3 SphericalToCartesian(real phi, real cosTheta)"
+            ]
+        },
+        "TransformGLtoDX": {
+            "detail":"",
+            "documentation": "Converts Cartesian coordinates given in the right-handed coordinate system",
+            "Synopsis": [
+                "real3 TransformGLtoDX(real3 v)"
+            ]
+        },
+        "ConvertEquiarealToCubemap": {
+            "detail":"",
+            "documentation": "Performs conversion from equiareal map coordinates to Cartesian (DirectX cubemap) ones.",
+            "Synopsis": [
+                "real3 ConvertEquiarealToCubemap(real u, real v)"
+            ]
+        },
+        "CubemapTexelToNVC": {
+            "detail":"",
+            "documentation": "Convert a texel position into normalized position [-1..1]x[-1..1]",
+            "Synopsis": [
+                "real2 CubemapTexelToNVC(uint2 unPositionTXS, uint cubemapSize)"
+            ]
+        },
+        "CubemapTexelToDirection": {
+            "detail":"",
+            "documentation": "Convert a normalized cubemap face position into a direction",
+            "Synopsis": [
+                "real3 CubemapTexelToDirection(real2 positionNVC, uint faceId)"
+            ]
+        },
+
+        "SampleConeUniform": {
+            "detail":"",
+            "documentation": "Sample Cone Uniform",
+            "Synopsis": [
+                "real3 SampleConeUniform(real u1, real u2, real cos_theta)"
+            ]
+        },
+        "SampleSphereUniform": {
+            "detail":"",
+            "documentation": "Sample Sphere Uniform",
+            "Synopsis": [
+                "real3 SampleSphereUniform(real u1, real u2)"
+            ]
+        },
+        "SampleHemisphereCosine": {
+            "detail":"",
+            "documentation": "Performs cosine-weighted sampling of the hemisphere. - 2:Cosine-weighted sampling without the tangent frame",
+            "Synopsis": [
+                "real3 SampleHemisphereCosine(real u1, real u2)",
+                "real3 SampleHemisphereCosine(real u1, real u2, real3 normal)"
+            ]
+        },
+        "SampleHemisphereUniform": {
+            "detail":"",
+            "documentation": "Sample Hemisphere Uniform",
+            "Synopsis": [
+                "real3 SampleHemisphereUniform(real u1, real u2)"
+            ]
+        },
+
+        "SampleSphere": {
+            "detail":"",
+            "documentation": "SampleSphere",
+            "Synopsis": [
+                "void SampleSphere(real2 u,real4x4 localToWorld,real radius,out real lightPdf,out real3  P,out real3 Ns)"
+            ]
+        },
+        "SampleHemisphere": {
+            "detail":"",
+            "documentation": "SampleHemisphere",
+            "Synopsis": [
+                "void SampleHemisphere(real2 u,real4x4 localToWorld,real radius,out real lightPdf,out real3  P,out real3 Ns)"
+            ]
+        },
+        "SampleCylinder": {
+            "detail":"",
+            "documentation": "The cylinder has no end caps (i.e. no disk on the side)",
+            "Synopsis": [
+                "void SampleCylinder(real2 u,real4x4 localToWorld,real radius,real width,out real lightPdf,out real3  P,out real3 Ns)"
+            ]
+        },
+        "SampleRectangle": {
+            "detail":"",
+            "documentation": "SampleRectangle",
+            "Synopsis": [
+                "void SampleRectangle(real2 u,real4x4 localToWorld,real width,real height,out real lightPdf,out real3  P,out real3 Ns)"
+            ]
+        },
+        "SampleDisk": {
+            "detail":"",
+            "documentation": "SampleDisk",
+            "Synopsis": [
+                "void SampleDisk(real2 u,real4x4 localToWorld,real width,real height,out real lightPdf,out real3  P,out real3 Ns)"
+            ]
+        },
+        "SampleCone": {
+            "detail":"",
+            "documentation": "Takes the cosine of the aperture as an input.",
+            "Synopsis": [
+                "void SampleCone(real2 u, real cosHalfAngle, out real3 dir, out real rcpPdf)"
+            ]
+        },
+        
+
+
+
+
+
 
 
 

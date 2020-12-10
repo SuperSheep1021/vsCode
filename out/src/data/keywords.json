@@ -614,7 +614,59 @@
             "UNITY_DEFINE_INSTANCE_PROP(float4,_Color)",
             "UNITY_SETUP_INSTANCE_ID(v)",
             "UNITY_TRANSFER_INSTANCE_ID(v,o)",
-            "UNITY_ACCESS_INSTANCED_PROP(name, _Color)"
+            "UNITY_ACCESS_INSTANCED_PROP(name, _Color)",
+
+            "SHADER_QUALITY_LOW",
+            "SHADER_QUALITY_HIGH",
+            "LIGHTMAP_ON",
+
+            "UNITY_BRANCH",
+            "UNITY_FLATTEN",
+            "UNITY_UNROLL",
+            "UNITY_UNROLLX(_x)",
+            "UNITY_LOOP",
+
+            "TEXTURE2D(textureName)",
+            "TEXTURE2D_ARRAY(textureName)",
+            "TEXTURECUBE(textureName)",
+            "TEXTURECUBE_ARRAY(textureName)",
+            "TEXTURE3D(textureName)",
+
+            "TEXTURE2D_FLOAT(textureName)",
+            "TEXTURE2D_ARRAY_FLOAT(textureName)",
+            "TEXTURECUBE_FLOAT(textureName)",
+            "TEXTURECUBE_ARRAY_FLOAT(textureName)",
+            "TEXTURE3D_FLOAT(textureName)",
+
+            "TEXTURE2D_HALF(textureName)",
+            "TEXTURE2D_ARRAY_HALF(textureName)",
+            "TEXTURECUBE_HALF(textureName)",
+            "TEXTURECUBE_ARRAY_HALF(textureName)",
+            "TEXTURE3D_HALF(textureName)",
+
+            "SAMPLER(textureName)",
+            "SAMPLER_CMP(textureName)",
+
+            "TEXTURE2D_PARAM(textureName, samplerName)",
+            "TEXTURE2D_ARRAY_PARAM(textureName, samplerName)",
+            "TEXTURECUBE_PARAM(textureName, samplerName)",
+            "TEXTURECUBE_ARRAY_PARAM(textureName, samplerName)",
+            "TEXTURE3D_PARAM(textureName, samplerName)",
+
+            "SAMPLE_TEXTURE2D(textureName, samplerName, coord2)",
+            "SAMPLE_TEXTURE2D_LOD(textureName, samplerName, coord2,lod)",
+            "SAMPLE_TEXTURE2D_BIAS(textureName, samplerName, coord2,bias)",
+            "SAMPLE_TEXTURE2D_GRAD(textureName, samplerName, coord2, ddx, ddy) ",
+            "SAMPLE_TEXTURE2D_ARRAY(textureName, samplerName, coord2, index)",
+            "SAMPLE_TEXTURE2D_ARRAY_LOD(textureName, samplerName, coord2, index, lod) ",
+            "SAMPLE_TEXTURE2D_ARRAY_BIAS(textureName, samplerName, coord2, index, bias) ",
+            "SAMPLE_TEXTURE2D_ARRAY_GRAD(textureName, samplerName, coord2, index, dpdx, dpdy)",
+            "SAMPLE_TEXTURECUBE(textureName, samplerName, coord3) ",
+            "SAMPLE_TEXTURECUBE_LOD(textureName, samplerName, coord3, lod)",
+            "SAMPLE_TEXTURECUBE_BIAS(textureName, samplerName, coord3, bias)"
+
+            
+
 
 
 
