@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const Shaderlab_1=require("./Shaderlab");class ShaderlabCompletionItemProvider{provideCompletionItems(e,r,o){let t=new Shaderlab_1.default(e,r);return Promise.resolve(t.provideCompletions())}}ShaderlabCompletionItemProvider.triggerCharacters=[".",":"," ",'"'],exports.default=ShaderlabCompletionItemProvider;

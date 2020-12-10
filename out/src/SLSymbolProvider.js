@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});const vscode_1=require("vscode"),Shaderlab_1=require("./Shaderlab");class SLSymbolProvider{provideDocumentSymbols(e,r){let o=new Shaderlab_1.default(e,new vscode_1.Position(0,0)).provideSymbols();return Promise.resolve(o)}}exports.default=SLSymbolProvider;
