@@ -3138,7 +3138,7 @@
             "Synopsis": [
                 "void SampleCone(real2 u, real cosHalfAngle, out real3 dir, out real rcpPdf)"
             ]
-        },
+        }
         
 
 
