@@ -438,6 +438,8 @@
             "appdata_full",
             "appdata_img",
             "SurfaceOutput",
+            "HLSLPROGRAM",
+            "ENDHLSL",
             "CGPROGRAM",
             "ENDCG",
             "GLSLPROGRAM",
@@ -508,6 +510,15 @@
             "exclude_renderers",
             "only_renderers",
 
+            "#pragma prefer_hlslcc gles",
+            "#pragma exclude_renderers d3d11_9x",
+            "#pragma target 2.0",
+
+            "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl",
+            "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl",
+
+            "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl",
+
             
             "geometry",
             "hull",
@@ -518,6 +529,20 @@
             "fwdbase_fullshadow",
             "fwdadd",
             "fwdadd_fullshadow",
+
+
+            "UNITY_VERTEX_INPUT_INSTANCE_ID",
+            "UNITY_VERTEX_OUTPUT_STEREO",
+            "UNITY_SETUP_INSTANCE_ID(v)",
+            "UNITY_TRANSFER_INSTANCE_ID(v, o)",
+            "UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o)",
+            "UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i)",
+            "UNITY_INSTANCING_BUFFER_START(MatProperty)",
+            "UNITY_DEFINE_INSTANCED_PROP(fixed4, _Color)",
+            "UNITY_INSTANCING_BUFFER_END(MatProperty)",
+
+            "CBUFFER_START(UnityPerMaterial)",
+            "CBUFFER_END",
 
             "SHADOW_COORDS()",
             "TRANSFER_SHADOW()",
@@ -534,12 +559,15 @@
 			"Header()",
 			"Space()",
             "NoScaleOffset",
+            "HideInInspector",
             "Toggle",
 			"Toggle(KEYWORD)",
 			"Enum(UnityEngine.Rendering.BlendMode)",
+            "[Enum(UnityEngine.Rendering.CompareFunction)]",
 			"Enum(Off,0,On,1)",
 			"Enum(UnityEngine.Rendering.CompareFunction)",
 			"Enum(UnityEngine.Rendering.CullMode)",
+            "[PowerSlider(2.2)]",
 			"KeyWordEnum()",
             "PowerSlider()",
             
@@ -596,6 +624,10 @@
             "DisableBatching",
             "IgnoreProjector",
             "CanUseSpriteAtlas",
+
+            "RenderPipeline",
+            "UniversalPipeline",
+            "ForwardLit",
 
             
             "unityShadowCoord4x4",

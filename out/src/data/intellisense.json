@@ -159,6 +159,12 @@
                 "GrassBillboard": "Terrain engine billboarded grass."
             }
         },
+        "RenderPipeline": {
+            "documentation": "urp",
+            "values": {
+                "UniversalPipeline": "UniversalPipeline"
+            }
+        },
         "Queue": {
             "documentation": "Determine in which order your objects are drawn using the Queue tag.",
             "values": {
@@ -218,7 +224,8 @@
                 "PrepassFinal": "Used in legacy Deferred Lighting, renders final color by combining textures, lighting and emission.",
                 "Vertex": "Used in legacy Vertex Lit rendering when object is not lightmapped; all vertex lights are applied.",
                 "VertexLMRGBM": "Used in legacy Vertex Lit rendering when object is lightmapped; on platforms where lightmap is RGBM encoded (PC & console).",
-                "VertexLM": "Used in legacy Vertex Lit rendering when object is lightmapped; on platforms where lightmap is double-LDR encoded (mobile platforms)."
+                "VertexLM": "Used in legacy Vertex Lit rendering when object is lightmapped; on platforms where lightmap is double-LDR encoded (mobile platforms).",
+                "UniversalForward": "URP"
             }
         },
         "PassFlags": {
