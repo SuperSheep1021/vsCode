@@ -58,6 +58,19 @@
                 "Never": "Make the stencil test always fail."
             }
         },
+        "pass": {
+            "documentation": "What to do with the contents of the buffer if the stencil test fails. Default: keep.",
+            "values": {
+                "Keep": "Keep the current contents of the buffer.",
+                "Zero": "Write 0 into the buffer.",
+                "Replace": "Write the reference value into the buffer.",
+                "IncrSat": "Increment the current value in the buffer. If the value is 255 already, it stays at 255.",
+                "DecrSat": "Decrement the current value in the buffer. If the value is 0 already, it stays at 0.",
+                "Invert": "Negate all the bits.",
+                "IncrWrap": "Increment the current value in the buffer. If the value is 255 already, it becomes 0.",
+                "DecrWrap": "Decrement the current value in the buffer. If the value is 0 already, it becomes 255."
+            }
+        },
         "fail": {
             "documentation": "What to do with the contents of the buffer if the stencil test fails. Default: keep.",
             "values": {

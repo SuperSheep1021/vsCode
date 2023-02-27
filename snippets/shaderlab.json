@@ -199,4 +199,19 @@
 			"#include \"AutoLight.cginc\""
 		]
 	}
+
+	,
+	"#include \"Lighting.hlsl\"": {
+		"prefix": "inclighting",
+		"body": [
+			"#include \"Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl\""
+		]
+	}
+	,
+	"#include \"Core.hlsl\"": {
+		"prefix": "inccore",
+		"body": [
+			"#include \"Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl\""
+		]
+	}
 }
